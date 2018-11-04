@@ -13905,7 +13905,7 @@ window.Vue = __webpack_require__(36);
 
 Vue.component('entries', {
     template: '#tasks-template',
-    props: ['list', 'url'],
+    props: ['entries', 'url'],
     methods: {
         editEntry: function editEntry(entry) {
             app.url = this.url;

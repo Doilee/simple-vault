@@ -85,7 +85,7 @@
                             </span>
                         @endif
                     </div>
-                    <entries :list="{{ json_encode($entries) }}" url="{{ url('entries') . '/' }}"></entries>
+                    <entries :entries="{{ json_encode($entries) }}" url="{{ url('entries') . '/' }}"></entries>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr v-for="entry in list">
+                <tr v-for="entry in entries">
                     <td>@{{ entry.id }}</td>
                     <td><a v-bind:href="entry.url">@{{ entry.url }}</a></td>
                     <td>@{{ entry.username }}</td>

@@ -18,7 +18,7 @@ window.Vue = require('vue');
 
 Vue.component('entries', {
     template: '#tasks-template',
-    props: ['list', 'url'],
+    props: ['entries', 'url'],
     methods: {
         editEntry: function(entry) {
             app.url = this.url;
