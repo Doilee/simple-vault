@@ -14,27 +14,10 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.prototype.$csrf_token = document.head.querySelector('meta[name="csrf-token"]').content;
 
-
-Vue.component('entries', {
-    template: '#tasks-template',
-    props: ['entries', 'url'],
-    methods: {
-        editEntry: function(entry) {
-            app.url = this.url;
-            app.fillEntry.id = entry.id;
-            app.fillEntry.url = entry.url;
-            app.fillEntry.username = entry.username;
-            app.fillEntry.password = entry.password;
-            $("#edit-item").modal('show');
-        }
-    }
-})
+Vue.component('entries', require('./components/Entries.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        fillEntry: {'id': '', 'url':'','username':'','password':''},
-        url: ''
-    }
+    el: '#app'
 });
